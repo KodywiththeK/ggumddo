@@ -1,6 +1,13 @@
 import { ArrowDown, ArrowRight, CircleDot, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "꿈또 | 꿈꾸는 또라이가 세상을 이긴다",
+  description: "좋아하는 것에서 시작해 나만의 방향을 발견하는 스타터즈의 기록 보관소.",
+  path: "/",
+});
 
 const journey = [["01", "좋아하는 것", "마음이 가는 곳에서 시작해요."], ["02", "세상에 필요한 것", "내가 지키고 싶은 가치를 찾아요."], ["03", "내 안의 강점", "이미 가진 힘을 다시 바라봐요."], ["04", "나를 둘러싼 강점", "혼자보다 함께 가진 자원을 발견해요."], ["05", "첫 번째 도전", "발견한 방향으로 한 걸음 내디뎌요."]];
 

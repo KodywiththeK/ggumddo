@@ -4,6 +4,19 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { MemberCard } from "@/components/starter/member-card";
 import { getRecordsByCohort, starterCohorts } from "@/lib/records";
+import { createPageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ cohortId: string }> }) {
+  const { cohortId } = await params;
+  const cohort = starterCohorts.find((item) => item.id === cohortId);
+  const label = cohort?.label ?? "스타터즈";
+
+  return createPageMetadata({
+    title: `${label} 멤버 기록 | 꿈또`,
+    description: `${label} 스타터즈가 함께한 기록을 둘러보고 각자의 방향을 만나보세요.`,
+    path: `/cohort/${cohortId}`,
+  });
+}
 
 export function generateStaticParams() { return starterCohorts.map((cohort) => ({ cohortId: cohort.id })); }
 
