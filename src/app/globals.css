@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Gowun+Dodum&family=Jua&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --color-paper: #fbf6ea;
+  --color-ink: #2f2a24;
+  --color-muted: #766d63;
+  --color-coral: #f2674a;
+  --color-yellow: #f6d26d;
+  --color-blue: #7198c8;
+  --color-green: #6d9a77;
+  --color-violet: #9b87c5;
+  --font-display: "Jua", "Apple SD Gothic Neo", sans-serif;
+  --font-sans: "Gowun Dodum", "Apple SD Gothic Neo", sans-serif;
+  --font-mono: "DM Mono", monospace;
+}
+
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html { background: var(--color-paper); text-size-adjust: 100%; }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); }
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+::selection { background: var(--color-yellow); color: var(--color-ink); }
+.paper-grid { background-image: linear-gradient(rgba(47,42,36,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(47,42,36,.045) 1px, transparent 1px); background-size: 26px 26px; }
+.noise { position: relative; }
+.noise::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .18; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E"); mix-blend-mode: multiply; }
+.book-page-in { animation: book-page-in 380ms cubic-bezier(.2,.8,.2,1) both; transform-origin: left center; }
+.reading-copy { overflow-wrap: anywhere; word-break: keep-all; }
+@keyframes book-page-in { 0% { opacity: 0; transform: perspective(1200px) rotateY(-7deg) translateX(18px); } 100% { opacity: 1; transform: perspective(1200px) rotateY(0) translateX(0); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }

@@ -1,0 +1,31 @@
+{
+  "name": "ggumddo-starters",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "yarn@3.2.0",
+  "scripts": {
+    "dev": "node scripts/generate-starter-data.mjs && yarn next dev",
+    "build": "node scripts/generate-starter-data.mjs && yarn next build --webpack",
+    "prepare:data": "node scripts/generate-starter-data.mjs",
+    "start": "yarn next start",
+    "typecheck": "yarn tsc --noEmit"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.90.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.9.0"
+  }
+}
